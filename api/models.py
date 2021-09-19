@@ -22,7 +22,7 @@ class Tracker(models.Model):
 # Overriding the Default Django Auth User and adding One More Field (user_type)
 class CustomUser(AbstractUser):
     user_type_data = ( (1, "Teacher"), (2, "Student"))
-    user_type = models.CharField(choices=user_type_data, max_length=10)
+    user_type = models.IntegerField(default=2, choices=user_type_data)
 
     REQUIRED_FIELDS = ['first_name']
 
@@ -96,14 +96,14 @@ class StudentResult(Tracker):
                 MinValueValidator(0)
         ])
     term_choices = ((1, "One"), (2, "Two"))
-    term = models.CharField(default=1, choices=term_choices, max_length=10)
+    term = models.IntegerField(default=1, choices=term_choices)
 
     @property
     def total_marks(self):
         return self.maths_marks + self.science_marks + self.history_marks
 
     def __str__(self):
-        return f'{self.student.name} | Term: {self.term}'
+        return f'{self.student} | Term: {self.term}'
 
     class Meta:
         verbose_name = _('Student Report')
