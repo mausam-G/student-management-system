@@ -1,7 +1,9 @@
-# Student Management System
+# Student Management System v1.0
 Django REST API for Student Management System
+### Note: This project works on Python 3.6+
 
 ## Local Setup Instructions:
+
 * Create an empty folder folder for the project
 * Create a virtual environment for this project using virtualenv or venv
 * Clone this repo
@@ -24,6 +26,8 @@ Django REST API for Student Management System
   * http://127.0.0.1:8000/redoc/
 
 ----
-### # TODO
+### # TODO for v2.0
 * Add APIs for Teacher
 * Add Permissions and Authentication
+* Add more features
+* Dockerise the project
