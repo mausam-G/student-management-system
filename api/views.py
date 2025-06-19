@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from .models import CustomUser, Teacher, Student, StudentResult
 from .serializers import CustomUserSerializer, TeacherSerializer, StudentSerializer, StudentResultSerializer
 
+def index(request):
+    return render (request,'index.html')
 class CustomUserView(generics.ListCreateAPIView):
     model = CustomUser
     queryset = CustomUser.objects.all()
